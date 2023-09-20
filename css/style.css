@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+section {
+  padding: 7rem 0;
+}
+
+.container {
+  width: 85%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.split > * {
+  flex-basis: 30%;
+  min-width: 15rem;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  background-color: var(--clr-accent, #0000ff);
+  color: var(--clr-text, #fff);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  border-radius: 0.25rem;
+  transition: transform 250ms ease-in-out, opacity 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+.primary-title {
+  font-size: 4rem;
+  font-size: clamp(3rem, 5vw + 1rem, 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+  line-height: 1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 15rem 0;
+  color: #fff;
+  background-color: #222;
+  background: url(../img/PngItem_109181.png) no-repeat center center/cover, radial-gradient(#444, #111);
+  background-size: 50%;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+}
+
+.featured {
+  background-color: #eee;
+}
+.featured-item {
+  display: block;
+  position: relative;
+  padding: 1rem;
+  transform: scale(0.85);
+  transition: transform 250ms ease-in-out;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+.featured-item p {
+  position: absolute;
+  bottom: -30%;
+  left: 30%;
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+.featured-item span {
+  display: block;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.featured-item:hover, .featured-item:focus {
+  transform: scale(1);
+}
+.featured-item:hover p, .featured-item:focus p {
+  opacity: 1;
+}
+.featured-item::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  padding: 70% 70% 0 0;
+  border-radius: 50%;
+  background-color: #2193b0;
+  z-index: -1;
+}
+.featured-item:nth-of-type(1) img {
+  width: 90%;
+}
+.featured-item:nth-of-type(2) img, .featured-item:nth-of-type(3) img {
+  width: 105%;
+  transform: rotate(-30deg) translateX(-15%);
+  margin-top: 1rem;
+}
+
+.product {
+  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+  padding: 3rem;
+  border-radius: 1rem;
+  margin-bottom: 10rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.product-title {
+  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+}
+.product-img {
+  margin: -5rem 0 0 0;
+  transform: rotate(-15deg) translateY(-5%);
+}
+@media (min-width: 45rem) {
+  .product {
+    text-align: left;
+  }
+  .product-title {
+    margin: 0;
+  }
+  .product-img {
+    float: right;
+    width: 65%;
+    shape-outside: url(../img/PngItem_2441637.png);
+    shape-margin: 1rem;
+    margin: 0 -5rem 0 0;
+  }
+  .shoe-left .product-img {
+    float: left;
+    shape-outside: url(../img/PngItem_1093562.png);
+    margin: 0 0 0 -5rem;
+  }
+}
+.product:nth-of-type(2) img {
+  transform: rotate(15deg);
+}
+
+.hero {
+  --clr-accent: #faa700;
+}
+
+.shoe-yellow {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
+
+.shoe-black {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f2858;
+}
+
+.shoe-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+@media (max-width: 939px) {
+  .featured-item:nth-of-type(1) p, .featured-item:nth-of-type(2) p {
+    bottom: -35%;
+  }
+  .featured-item:nth-of-type(3) p {
+    bottom: -65%;
+  }
+}
+@media (max-width: 620px) {
+  .featured-item:nth-of-type(1) {
+    margin-bottom: 1rem;
+  }
+  .featured-item:nth-of-type(1) p {
+    bottom: -30%;
+  }
+  .featured-item:nth-of-type(2) p {
+    bottom: -80%;
+  }
+  .featured-item:nth-of-type(3) p {
+    bottom: -55%;
+  }
+  .featured-item:nth-of-type(3) {
+    margin-top: 4rem;
+  }
+  .product {
+    margin-bottom: 5rem 0;
+  }
+}/*# sourceMappingURL=style.css.map */
